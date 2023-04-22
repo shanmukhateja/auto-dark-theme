@@ -1,0 +1,2 @@
+[console_scripts]
+apg-py = apg_py.generator:main
