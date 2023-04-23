@@ -25,18 +25,17 @@ Please follow these instructions to setup:
 
 1. Copy `config/auto-dark-theme.service` to `$HOME/.local/share/systemd/user` 
 
-2. Open the service file in your favorite text editor and update the following:
+2. Open the service file in your favorite text editor and make the following changes.
 
-    1.  The path inside `ExecStart` should point to the binary you've built locally.
-    2. If using X11, please replace `plasma-workspace-wayland.target` with `plasma-workspace.target`.
-
+    1. Please update `WorkingDirectory` to correct path.  
+    2. Please ensure `python` executable path (default is `/usr/bin/python`) is correct in `ExecStart`.
+    3. If using X11, please replace `plasma-workspace-wayland.target` with `plasma-workspace.target`.
 
 3. Enable the service using the below command:
 
 ```sh
 systemctl --user enable --now auto-dark-theme.service
 ```
-4. (Optional) <br>Reboot your machine and check `journalctl --user` to see if it's working.
 
 ## Development
 

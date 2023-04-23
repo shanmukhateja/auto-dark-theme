@@ -1,0 +1,8 @@
+[Service]
+Type=exec
+Environment="QT_QPA_PLATFORM=wayland"
+WorkingDirectory=/home/suryateja/Projects/auto-dark-theme
+ExecStart=/usr/bin/python -m auto-dark-theme
+RemainAfterExit=false
+[Install]
+WantedBy=plasma-workspace-wayland.target
