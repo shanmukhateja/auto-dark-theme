@@ -20,20 +20,23 @@ class DbusListener:
 
     def __init__(self):
         print("Initializing...")
-        self.bus = dbus.SessionBus()
-        self.bus_name = 'org.freedesktop.ScreenSaver'
-        self.object_path = '/org/freedesktop/ScreenSaver'
-        self.signal_name = 'ActiveChanged'
+        self.session_bus = dbus.SessionBus()
+        self.system_bus = dbus.SystemBus()
 
-        self.iface = self.bus.get_object(self.bus_name, self.object_path)
+        self.iface_screen_lock = self.session_bus.get_object(
+            'org.freedesktop.ScreenSaver', '/org/freedesktop/ScreenSaver')
+        self.iface_screen_lock.connect_to_signal(
+            'ActiveChanged', handler_function=self.handle_lock_unlock)
 
-        print("Listening for screen lock/unlock signal...")
-        self.iface.connect_to_signal(
-            self.signal_name, handler_function=self.handle_lock_unlock)
+        self.iface_suspend = self.system_bus.get_object(
+            'org.freedesktop.login1', '/org/freedesktop/login1')
+        self.iface_suspend.connect_to_signal(
+            'PrepareForSleep', handler_function=self.handle_lock_unlock)
 
         try:
             loop.run()
         except:
             print("Shutting down..")
-            self.bus.close()
+            self.session_bus.close()
+            self.system_bus.close()
             loop.quit()
