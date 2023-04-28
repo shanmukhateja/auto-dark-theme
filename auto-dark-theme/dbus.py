@@ -34,6 +34,9 @@ class DbusListener:
             'PrepareForSleep', handler_function=self.handle_lock_unlock)
 
         try:
+            # Apply theme on init
+            self.handle_lock_unlock(dbus.Boolean(False))
+            # Start event loop
             loop.run()
         except:
             print("Shutting down..")
