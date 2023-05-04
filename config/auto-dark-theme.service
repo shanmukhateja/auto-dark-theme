@@ -1,8 +1,13 @@
 [Service]
 Type=exec
+RemainAfterExit=true
+Restart=on-failure
+RestartSec=10
 Environment="QT_QPA_PLATFORM=wayland"
 WorkingDirectory=/home/suryateja/Projects/auto-dark-theme
+ExecStartPre=/usr/bin/sleep 5
 ExecStart=/usr/bin/python -m auto-dark-theme
-RemainAfterExit=false
+StandardOutput=journal
+StandardError=journal
 [Install]
 WantedBy=plasma-workspace-wayland.target
