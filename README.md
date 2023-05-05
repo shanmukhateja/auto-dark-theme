@@ -43,11 +43,13 @@ systemctl --user enable --now auto-dark-theme.service
 
 ```sh
 git clone https://github.com/shanmukhateja/auto-dark-theme
+cd auto-dark-theme
 ```
 
-2. Install dependencies.
+2. Setup virtualenv and install dependencies.
 
 ```sh
+virtualenv .
 pip install -r requirements.txt
 ```
 
@@ -70,8 +72,6 @@ MIT
 
 # Credits
 
-dbus-python
+1. dbus-python
 
-<a href="https://www.flaticon.com/free-icons/dark" title="dark icons">Dark icons created by Freepik - Flaticon</a>
-
-PyGObject
+2. PyGObject
