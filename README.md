@@ -27,9 +27,8 @@ Please follow these instructions to setup:
 
 2. Open the service file in your favorite text editor and make the following changes.
 
-    1. Please update `WorkingDirectory` to correct path.  
-    2. Please ensure `python` executable path (default is `/usr/bin/python`) is correct in `ExecStart`.
-    3. If using X11, please replace `plasma-workspace-wayland.target` with `plasma-workspace.target`.
+    1. Please update project directory path for `WorkingDirectory` and `ExecStart`.
+    2. If using X11, please replace `plasma-workspace-wayland.target` with `plasma-workspace.target`.
 
 3. Enable the service using the below command:
 

@@ -6,7 +6,7 @@ RestartSec=10
 Environment="QT_QPA_PLATFORM=wayland"
 WorkingDirectory=/home/suryateja/Projects/auto-dark-theme
 ExecStartPre=/usr/bin/sleep 5
-ExecStart=/usr/bin/python -m auto-dark-theme
+ExecStart=/home/suryateja/Projects/auto-dark-theme/bin/python -m auto-dark-theme
 StandardOutput=journal
 StandardError=journal
 [Install]
