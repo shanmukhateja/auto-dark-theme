@@ -1,0 +1,3 @@
+#!/bin/sh
+
+python -m auto-dark-theme.cli $1

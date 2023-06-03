@@ -35,6 +35,9 @@ Please follow these instructions to setup:
 ```sh
 systemctl --user enable --now auto-dark-theme.service
 ```
+4. CLI - Optional
+    - If you'd like to use command-line tool, copy `config/autodarktheme` to any directory inside `$PATH`.
+    - Run `chmod +x `path/to/autodarktheme` to mark it as executable.
 
 ## Development
 
