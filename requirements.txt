@@ -9,4 +9,5 @@ pycairo==1.23.0
 pycodestyle==2.10.0
 pyflakes==3.0.1
 PyGObject==3.44.1
+tabulate==0.9.0
 tomli==2.0.1
